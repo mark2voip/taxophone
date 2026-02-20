@@ -1,0 +1,33 @@
+sudo apt update && apt upgrade  
+
+
+- зависимости
+sudo apt install -y \
+  libncurses5-dev libssl-dev libxml2-dev libsqlite3-dev \
+  uuid-dev libjansson-dev libedit-dev pkg-config libsqlite3-dev \
+  libcurl4-openssl-dev libspeexdsp-dev libsndfile1-dev \
+  libiksemel-dev libspandsp-dev
+
+
+- перезодим в каталог и распаковываем
+cd /usr/src
+
+sudo wget https://downloads.asterisk.org/pub/telephony/asterisk/asterisk-20-current.tar.gz
+
+- переходим в папку и запускаем скриптик сборки недостающих пакетов
+cd asterisk-20.*
+sudo contrib/scripts/install_prereq install
+
+-- команды
+sudo ./configure  # должны увидеть лого в виде звезды
+
+makemenuselect вообще пропускаю
+sudo make -j$(nproc)
+sudo make install
+
+
+
+-
+
+
+
