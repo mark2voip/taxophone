@@ -24,7 +24,7 @@ sudo ./configure  # должны увидеть лого в виде звезд�
 makemenuselect вообще пропускаю
 sudo make -j$(nproc)
 sudo make install
-
+sudo make samples && make config
 
 
 -
