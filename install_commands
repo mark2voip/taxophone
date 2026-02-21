@@ -26,8 +26,11 @@ sudo make -j$(nproc)
 sudo make install
 sudo make samples && make config
 
+-- готово. Теперь можно запускать 
 
--
-
+sudo systemctl start asterisk   # Стартует Asterisk сейчас
+sudo systemctl enable asterisk  # Система будет автоматически запускать Asterisk после перезагрузки
+sudo systemctl status asterisk  # Показывает, что Asterisk запущен, сколько процессов, память, ошибки и т.д.
+sudo asterisk -rvvv             # -r подключение к запущенному серверу, -vvv выводит подробную информацию
 
 
